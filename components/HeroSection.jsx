@@ -2,12 +2,15 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Lottie from "lottie-react";
+import dynamic from "next/dynamic";
 import heroAnimation from "@/public/animations/ai-care-illustration.json";
+
+// Dynamically import Lottie with ssr: false
+const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 
 export default function HeroSection() {
   return (
-    <section className="mt-15 min-h-screen flex flex-col items-center justify-center px-6 text-center bg-gradient-to-br from-blue-50 to-white dark:from-zinc-900 dark:to-black">
+    <section className="pt-15 min-h-screen flex flex-col items-center justify-center px-6 text-center bg-gradient-to-br from-blue-50 to-white dark:from-zinc-900 dark:to-black">
       <motion.h1
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}

@@ -1,19 +1,37 @@
-// components/DarkModeToggle.jsx
 "use client";
 
 import { useEffect, useState } from "react";
 import { Moon, Sun } from "lucide-react";
-import {cn} from "../lib/utils";
+import { cn } from "../lib/utils";
 
 export default function DarkModeToggle() {
   const [isDark, setIsDark] = useState(false);
 
+  // Set theme based on saved preference or system preference
+  useEffect(() => {
+    const root = window.document.documentElement;
+    const storedTheme = localStorage.getItem("theme");
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+    const initialDark = storedTheme === "dark" || (!storedTheme && prefersDark);
+    setIsDark(initialDark);
+
+    if (initialDark) {
+      root.classList.add("dark");
+    } else {
+      root.classList.remove("dark");
+    }
+  }, []);
+
+  // Update DOM and save preference
   useEffect(() => {
     const root = window.document.documentElement;
     if (isDark) {
       root.classList.add("dark");
+      localStorage.setItem("theme", "dark");
     } else {
       root.classList.remove("dark");
+      localStorage.setItem("theme", "light");
     }
   }, [isDark]);
 
