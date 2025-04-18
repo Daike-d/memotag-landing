@@ -7,17 +7,18 @@ import TractionSection from "@/components/TractionSection";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 import DarkModeToggle from "@/components/DarkModeToggle";
+import { FeatureSection } from "@/components/FeatureSection";
 
 export default function HomePage() {
 
 
   return (
     <main>
-      <DarkModeToggle/>
       <HeroSection />
       <ProblemSection />
       <SolutionSection />
       <TractionSection />
+      {/* <FeatureSection/> */}
       <CTASection />
       <Footer />
     </main>

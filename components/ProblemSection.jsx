@@ -2,26 +2,58 @@
 
 import { motion } from "framer-motion";
 import {
-   ChartBarIcon,
-   ExclamationTriangleIcon,
    UserGroupIcon,
+   ExclamationTriangleIcon,
+   ChartBarIcon,
+   ClockIcon,
+   GlobeAltIcon,
+   CurrencyDollarIcon,
+   HeartIcon,
+   EyeSlashIcon,
 } from "@heroicons/react/24/outline";
+import { InfiniteMovingCards } from "./ui/infinite-moving-cards";
+
 
 const stats = [
    {
       icon: <UserGroupIcon className="h-8 w-8 text-indigo-600" />,
-      number: "55M+",
+      stat: "55M+",
       label: "People worldwide live with dementia",
    },
    {
       icon: <ExclamationTriangleIcon className="h-8 w-8 text-red-500" />,
-      number: "60%",
+      stat: "60%",
       label: "Go undiagnosed in early stages",
    },
    {
       icon: <ChartBarIcon className="h-8 w-8 text-emerald-500" />,
-      number: "3x",
+      stat: "3x",
       label: "Increase in cases by 2050",
+   },
+   {
+      icon: <ClockIcon className="h-8 w-8 text-yellow-500" />,
+      stat: "1 every 3s",
+      label: "New case arises globally",
+   },
+   {
+      icon: <GlobeAltIcon className="h-8 w-8 text-blue-500" />,
+      stat: "71%",
+      label: "Projected dementia cases in underserved regions",
+   },    
+   {
+      icon: <CurrencyDollarIcon className="h-8 w-8 text-green-600" />,
+      stat: "$2.8T",
+      label: "Global economic impact by 2030",
+   },
+   {
+      icon: <HeartIcon className="h-8 w-8 text-pink-600" />,
+      stat: "133B hrs",
+      label: "Informal care hours provided annually",
+   },
+   {
+      icon: <EyeSlashIcon className="h-8 w-8 text-gray-500" />,
+      stat: "75%",
+      label: "Cases go undiagnosed globally",
    },
 ];
 
@@ -51,8 +83,20 @@ export default function ProblemSection() {
             Dementia affects millions, yet early detection and proper care are still far behind.
          </motion.p>
 
-         <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 max-w-5xl mx-auto">
-            {stats.map((stat, idx) => (
+         <div className=" rounded-md flex flex-col antialiased bg-white dark:bg-black dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
+            <InfiniteMovingCards
+               items={stats}
+               direction="right"
+               speed="slow"
+            />
+         </div>
+         <div className="rounded-md flex flex-col antialiased bg-white dark:bg-black dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
+            <InfiniteMovingCards
+               items={stats}
+               direction="left"
+               speed="slow"
+            />
+            {/* {stats.map((stat, idx) => (
                <motion.div
                   key={idx}
                   initial={{ opacity: 0, y: 40 }}
@@ -66,13 +110,13 @@ export default function ProblemSection() {
                      {stat.icon}
                   </div>
                   <h3 className="text-2xl font-bold text-indigo-700 dark:text-indigo-400 mb-2 tracking-tight">
-                     {stat.number}
+                     {stat.stat}
                   </h3>
                   <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
                      {stat.label}
                   </p>
                </motion.div>
-            ))}
+            ))} */}
          </div>
       </section>
    );
