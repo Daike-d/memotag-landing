@@ -3,6 +3,7 @@ import "./globals.css";
 import {Toaster} from "sonner";
 import { NavBar } from "@/components/NavBar";
 import DarkModeToggle from "@/components/DarkModeToggle";
+import Footer from "@/components/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,6 +31,7 @@ export default function RootLayout({ children }) {
         </>
         <Toaster richColors position="top-center" />
         {children}
+        <Footer/>
       </body>
     </html>
   );
