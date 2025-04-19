@@ -37,7 +37,7 @@ export default function CTASection() {
    };
 
    return (
-      <section className="py-20 bg-indigo-50 dark:bg-zinc-900 px-6">
+      <section className="py-20 bg-blue-50 dark:bg-zinc-900 px-6">
          <div className="max-w-2xl mx-auto text-center">
             <motion.h2
                initial={{ opacity: 0, y: 30 }}

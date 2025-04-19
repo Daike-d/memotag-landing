@@ -59,7 +59,7 @@ const stats = [
 
 export default function ProblemSection() {
    return (
-      <section className="relative py-20 bg-gradient-to-br from-white to-blue-50 dark:from-zinc-800 dark:to-black px-6 text-center overflow-hidden">
+      <section className="relative py-20 bg-gradient-to-b from-white to-blue-50 dark:from-black dark:to-black px-6 text-center overflow-hidden">
          {/* Background Glow */}
          <div className="absolute -z-10 top-0 left-1/2 -translate-x-1/2 w-[400px] h-[400px] rounded-full blur-3xl opacity-30 bg-indigo-300 dark:bg-indigo-800" />
 

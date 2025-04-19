@@ -1,22 +1,43 @@
 "use client";
-
-import { PinContainer } from "./ui/3d-pin";
 import { CardStack } from "./ui/card-stack";
 import { cn } from "@/lib/utils";
+import { motion } from "framer-motion";
 
-// Main FeatureSection Component
-export function FeatureSection() {
+export function FeedbackSection() {
    return (
-      <div className="dark:bg-zinc-900 flex items-center justify-center w-full">
-         <PinContainer title="MemoTag">
-            <CardStack items={CARDS} />
-         </PinContainer>
+      <div className="h-[35rem] mx-auto bg-gradient-to-b from-white to-blue-50 dark:from-black dark:to-zinc-900 flex flex-col items-center justify-center w-full">
+         <motion.h2
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-3xl md:text-4xl mb-6 font-bold text-gray-900 dark:text-white"
+         >
+            Hear From Our Users
+         </motion.h2>
+         <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ delay: 0.2, duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-gray-600 dark:text-gray-300 max-w-xl mx-auto mb-20"
+         >
+            These voices reflect the trust and impact we strive for every day.
+         </motion.p>
+
+
+         {/* <div className=" flex items-center justify-center w-full"> */}
+         <CardStack items={CARDS} />
+         {/* </div> */}
       </div>
    );
 }
 
-// Highlight utility for text
-const Highlight = ({ children, className }) => {
+// Small utility to highlight the content of specific section of a testimonial content
+export const Highlight = ({
+   children,
+   className
+}) => {
    return (
       <span
          className={cn(
@@ -28,7 +49,6 @@ const Highlight = ({ children, className }) => {
    );
 };
 
-// Testimonials used in CardStack
 const CARDS = [
    {
       id: 0,
@@ -102,4 +122,5 @@ const CARDS = [
          </p>
       ),
    },
+
 ];

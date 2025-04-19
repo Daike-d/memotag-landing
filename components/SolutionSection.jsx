@@ -36,7 +36,7 @@ const steps = [
 ];
 export default function SolutionSection() {
    return (
-      <section className="py-20 bg-white dark:bg-zinc-900 px-6 text-center">
+      <section className="py-20 bg-gradient-to-b from-white to-white dark:from-zinc-900 dark:to-black px-6 text-center">
          <motion.h2
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}

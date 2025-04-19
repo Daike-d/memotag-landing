@@ -5,6 +5,7 @@ import ProblemSection from "@/components/ProblemSection";
 import SolutionSection from "@/components/SolutionSection";
 import TractionSection from "@/components/TractionSection";
 import CTASection from "@/components/CTASection";
+import { FeedbackSection } from "@/components/FeedbackSection";
 import { FeatureSection } from "@/components/FeatureSection";
 
 export default function HomePage() {
@@ -14,8 +15,9 @@ export default function HomePage() {
     <main>
       <HeroSection />
       <ProblemSection />
-      <SolutionSection />
       <TractionSection />
+      <SolutionSection />
+      <FeedbackSection/>
       {/* <FeatureSection/> */}
       <CTASection />
     </main>

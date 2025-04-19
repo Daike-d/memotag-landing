@@ -24,7 +24,7 @@ const traction = [
 
 export default function TractionSection() {
   return (
-    <section className="py-20 bg-gradient-to-b from-blue-50 to-white dark:from-zinc-900 dark:to-black px-6 text-center">
+    <section className="py-20 bg-gradient-to-b from-blue-50 to-white dark:from-black dark:to-zinc-900 px-6 text-center">
       <motion.h2
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
